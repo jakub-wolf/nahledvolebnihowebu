@@ -14,11 +14,15 @@
   --pad: clamp(20px, 5vw, 72px);
   --section-pad: clamp(56px, 8vw, 112px);
 }
-
 html,
 body,
 body * {
-  forced-color-adjust: none;
+  forced-color-adjust: none !important;
+}
+
+html,
+body {
+  color-scheme: only light;
 }
 
 *{box-sizing:border-box}
@@ -819,34 +823,55 @@ h1, h2, h3, .campaign-logo {
   }
 }
 
-/* final clean overrides: hero colours, sections 2/3, priorities */
+/* final clean overrides: hero colours, sections 2/3, priorities, Chromium safeguards */
 .hero-cover-copy .kicker {
-  color: var(--stan-yellow) !important;
+  color: #ffed00 !important;
   text-shadow: none !important;
 }
 
 .hero-cover-copy h1 {
-  color: var(--pirate-white) !important;
+  color: #ffffff !important;
   text-shadow: none !important;
 }
 
 .hero-cover-logo {
-  color: var(--pirate-white) !important;
+  color: #ffffff !important;
   text-shadow: none !important;
 }
 
 .hero-cover-logo span {
-  color: var(--stan-magenta) !important;
+  color: #ce0f68 !important;
 }
 
+/* Exact campaign colours repeated as literal sRGB values for Chromium. */
+.section-light,
+.vote {
+  background-color: #fcf7e0 !important;
+}
+
+.section-black,
+.topbar,
+.footer,
+body {
+  background-color: #000000 !important;
+}
+
+.button-yellow,
+.social-box,
+.candidate-socials a {
+  background-color: #ffed00 !important;
+}
+
+/* Section 2: beige background, two square images, no text, no clipping. */
 #radnice.campaign-split {
   height: 80vh !important;
   min-height: 80vh !important;
   padding: 0 !important;
-  background: var(--stan-cream) !important;
+  background-color: #fcf7e0 !important;
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   align-items: stretch !important;
+  overflow: hidden !important;
 }
 
 #radnice .campaign-panel,
@@ -855,7 +880,7 @@ h1, h2, h3, .campaign-logo {
   height: 80vh !important;
   min-height: 80vh !important;
   padding: 0 !important;
-  background: var(--stan-cream) !important;
+  background-color: #fcf7e0 !important;
   color: inherit !important;
   display: grid !important;
   place-items: center !important;
@@ -863,22 +888,24 @@ h1, h2, h3, .campaign-logo {
 }
 
 #radnice .campaign-panel-inner {
-  width: 100vw !important;
+  width: 100% !important;
   height: 80vh !important;
   min-height: 80vh !important;
   display: grid !important;
   place-items: center !important;
   padding: 0 !important;
+  overflow: visible !important;
 }
 
 #radnice .campaign-panel-logo {
   display: block !important;
-  width: 64vh !important;
-  height: 64vh !important;
-  max-width: 64vh !important;
-  max-height: 64vh !important;
+  width: min(64vh, 42vw) !important;
+  height: min(64vh, 42vw) !important;
+  max-width: min(64vh, 42vw) !important;
+  max-height: min(64vh, 42vw) !important;
   aspect-ratio: 1 / 1 !important;
   object-fit: contain !important;
+  object-position: center center !important;
 }
 
 #radnice .campaign-panel-inner > :not(img) {
@@ -887,12 +914,12 @@ h1, h2, h3, .campaign-logo {
 
 .leader-panel-pirati,
 .leader-panel-stan {
-  background: var(--stan-cream) !important;
+  background-color: #fcf7e0 !important;
 }
 
 .priority-number {
-  background: var(--pirate-black) !important;
-  color: var(--stan-yellow) !important;
+  background-color: #000000 !important;
+  color: #ffed00 !important;
 }
 
 @media (max-width: 900px) {
@@ -911,10 +938,9 @@ h1, h2, h3, .campaign-logo {
   }
 
   #radnice .campaign-panel-logo {
-    width: 32vh !important;
-    height: 32vh !important;
-    max-width: 32vh !important;
-    max-height: 32vh !important;
+    width: min(32vh, 82vw) !important;
+    height: min(32vh, 82vw) !important;
+    max-width: min(32vh, 82vw) !important;
+    max-height: min(32vh, 82vw) !important;
   }
 }
-
