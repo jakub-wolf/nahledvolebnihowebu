@@ -944,3 +944,52 @@ body {
     max-height: min(32vh, 82vw) !important;
   }
 }
+
+/* v3: Chromium hard lock for the STAN cream background.
+   Keeps the beige as a repeated 1px PNG as well as a CSS color, so browsers
+   that algorithmically alter CSS background colors have less room to repaint it. */
+html {
+  color-scheme: only light !important;
+}
+
+#radnice.campaign-split,
+#radnice .campaign-panel,
+#radnice .campaign-panel-pirati,
+#radnice .campaign-panel-stan,
+#radnice .campaign-panel-inner,
+.leader-panel-pirati,
+.leader-panel-stan {
+  background-color: #fcf7e0 !important;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP48/0BAAXGAtQCbFn9AAAAAElFTkSuQmCC") !important;
+  background-repeat: repeat !important;
+  background-size: auto !important;
+  background-blend-mode: normal !important;
+  forced-color-adjust: none !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: only light !important;
+  }
+
+  #radnice.campaign-split,
+  #radnice .campaign-panel,
+  #radnice .campaign-panel-pirati,
+  #radnice .campaign-panel-stan,
+  #radnice .campaign-panel-inner,
+  .leader-panel-pirati,
+  .leader-panel-stan {
+    background-color: #fcf7e0 !important;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP48/0BAAXGAtQCbFn9AAAAAElFTkSuQmCC") !important;
+    background-repeat: repeat !important;
+    background-size: auto !important;
+    background-blend-mode: normal !important;
+    forced-color-adjust: none !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+  }
+}
