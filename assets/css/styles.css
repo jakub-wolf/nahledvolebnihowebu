@@ -1,4 +1,6 @@
 :root {
+  color-scheme: only light;
+
   --pirate-black: #000000;
   --pirate-white: #ffffff;
   --pirate-pink: #cf7bcc;
