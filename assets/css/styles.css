@@ -812,190 +812,102 @@ h1, h2, h3, .campaign-logo {
   }
 }
 
-
-/* v10 requested changes: hero colours + swap sections 2 and 3 */
+/* final clean overrides: hero colours, sections 2/3, priorities */
 .hero-cover-copy .kicker {
   color: var(--stan-yellow) !important;
   text-shadow: none !important;
 }
+
 .hero-cover-copy h1 {
   color: var(--pirate-white) !important;
   text-shadow: none !important;
 }
+
 .hero-cover-logo {
   color: var(--pirate-white) !important;
   text-shadow: none !important;
 }
+
 .hero-cover-logo span {
   color: var(--stan-magenta) !important;
 }
 
-.campaign-split {
-  padding: 0 !important;
+#radnice.campaign-split {
+  height: 80vh !important;
   min-height: 80vh !important;
+  padding: 0 !important;
+  background: var(--stan-cream) !important;
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   align-items: stretch !important;
 }
-.campaign-panel {
+
+#radnice .campaign-panel,
+#radnice .campaign-panel-pirati,
+#radnice .campaign-panel-stan {
+  height: 80vh !important;
   min-height: 80vh !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: clamp(24px, 5vw, 56px) !important;
-}
-.campaign-panel-pirati {
-  background: var(--pirate-black) !important;
-  color: var(--pirate-white) !important;
-}
-.campaign-panel-stan {
+  padding: 0 !important;
   background: var(--stan-cream) !important;
-  color: var(--stan-magenta) !important;
-}
-.campaign-panel-inner {
-  width: min(100%, 520px) !important;
-  display: grid !important;
-  justify-items: center !important;
-  gap: clamp(1.25rem, 2vw, 1.8rem) !important;
-  text-align: center !important;
-}
-.campaign-panel-logo {
-  width: min(100%, 420px) !important;
-  height: auto !important;
-  max-height: 46vh !important;
-  object-fit: contain !important;
-}
-.campaign-panel-inner-stan h2 {
-  color: var(--stan-magenta) !important;
-  font-size: clamp(3.8rem, 7vw, 7rem) !important;
-  line-height: 1.05 !important;
-  max-width: 10ch !important;
-}
-.campaign-slogan-box {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 60px !important;
-  padding: .9rem 1.35rem !important;
-  font-size: clamp(1.9rem, 3vw, 2.6rem) !important;
-  line-height: 1 !important;
-  text-transform: uppercase !important;
-}
-.campaign-slogan-box-pirati {
-  background: var(--stan-yellow) !important;
-  color: var(--pirate-black) !important;
-}
-.campaign-slogan-box-stan {
-  background: var(--stan-yellow) !important;
-  color: var(--stan-magenta) !important;
-}
-
-@media (max-width: 900px) {
-  .campaign-split {
-    grid-template-columns: 1fr !important;
-  }
-  .campaign-panel {
-    min-height: 40vh !important;
-  }
-  .campaign-panel-inner {
-    width: min(100%, 640px) !important;
-  }
-  .campaign-panel-logo {
-    width: min(100%, 360px) !important;
-    max-height: 30vh !important;
-  }
-  .campaign-panel-inner-stan h2 {
-    font-size: clamp(3.3rem, 12vw, 5.6rem) !important;
-  }
-}
-
-
-/* v11 requested updates */
-.campaign-panel,
-.campaign-panel-pirati,
-.campaign-panel-stan {
-  background: var(--pirate-white) !important;
-  color: var(--pirate-black) !important;
-}
-.campaign-panel {
-  padding: clamp(16px, 3vw, 32px) !important;
-}
-.campaign-panel-inner {
-  width: 100% !important;
-  height: 100% !important;
+  color: inherit !important;
   display: grid !important;
   place-items: center !important;
+  overflow: hidden !important;
 }
-.campaign-panel-logo {
+
+#radnice .campaign-panel-inner {
+  width: 100vw !important;
+  height: 80vh !important;
+  min-height: 80vh !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+}
+
+#radnice .campaign-panel-logo {
   display: block !important;
-  width: auto !important;
-  height: 80% !important;
-  max-height: 80% !important;
-  max-width: 80% !important;
+  width: 64vh !important;
+  height: 64vh !important;
+  max-width: 64vh !important;
+  max-height: 64vh !important;
   aspect-ratio: 1 / 1 !important;
   object-fit: contain !important;
 }
+
+#radnice .campaign-panel-inner > :not(img) {
+  display: none !important;
+}
+
 .leader-panel-pirati,
 .leader-panel-stan {
   background: var(--stan-cream) !important;
 }
+
 .priority-number {
   background: var(--pirate-black) !important;
   color: var(--stan-yellow) !important;
 }
+
 @media (max-width: 900px) {
-  .campaign-panel-logo {
-    height: 80% !important;
-    max-height: 80% !important;
-    max-width: min(80%, 320px) !important;
+  #radnice.campaign-split {
+    height: 80vh !important;
+    min-height: 80vh !important;
+    grid-template-columns: 1fr !important;
   }
-}
 
-
-/* v12: section 2 strict image-only beige panels */
-#radnice.campaign-split {
-  background: var(--stan-cream) !important;
-}
-#radnice .campaign-panel,
-#radnice .campaign-panel-pirati,
-#radnice .campaign-panel-stan {
-  background: var(--stan-cream) !important;
-  color: inherit !important;
-  padding: 0 !important;
-  min-height: 80vh !important;
-}
-#radnice .campaign-panel-inner {
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 80vh !important;
-  display: grid !important;
-  place-items: center !important;
-  padding: 0 !important;
-}
-#radnice .campaign-panel-logo {
-  display: block !important;
-  height: 80% !important;
-  width: auto !important;
-  max-height: 80% !important;
-  max-width: none !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: contain !important;
-}
-#radnice .campaign-panel-inner > :not(img) {
-  display: none !important;
-}
-@media (max-width: 900px) {
   #radnice .campaign-panel,
   #radnice .campaign-panel-pirati,
   #radnice .campaign-panel-stan,
   #radnice .campaign-panel-inner {
+    height: 40vh !important;
     min-height: 40vh !important;
   }
+
   #radnice .campaign-panel-logo {
-    height: 80% !important;
-    width: auto !important;
-    max-height: 80% !important;
-    max-width: 80% !important;
+    width: 32vh !important;
+    height: 32vh !important;
+    max-width: 32vh !important;
+    max-height: 32vh !important;
   }
 }
 
