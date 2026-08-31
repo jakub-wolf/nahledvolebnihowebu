@@ -1,1 +1,999 @@
+:root {
+  --pirate-black: #000000;
+  --pirate-white: #ffffff;
+  --pirate-pink: #cf7bcc;
+  --pirate-yellow: #fec900;
+  --stan-magenta: #ce0f68;
+  --stan-yellow: #ffed00;
+  --stan-cream: #fcf7e0;
+  --stan-light-pink: #ffc0c7;
+  --ink: #0f0a12;
+  --wrap: 1180px;
+  --pad: clamp(20px, 5vw, 72px);
+  --section-pad: clamp(56px, 8vw, 112px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--pirate-black);color:var(--ink);font-family:"Bebas Neue Pro","Bebas Neue",Impact,Haettenschweiler,"Arial Narrow",sans-serif;letter-spacing:.01em;overflow-x:hidden}
+a{color:inherit}img{display:block;max-width:100%}p{margin:0}.skip-link{position:fixed;left:1rem;top:1rem;z-index:999;transform:translateY(-180%);background:var(--stan-yellow);color:var(--stan-magenta);padding:.65rem .9rem}.skip-link:focus{transform:translateY(0)}
+.topbar{position:sticky;top:0;z-index:50;min-height:72px;display:flex;align-items:center;gap:1rem;padding:.65rem var(--pad);background:var(--pirate-black);color:var(--pirate-white);border-bottom:1px solid rgba(255,255,255,.16)}
+.brand{font-size:clamp(2rem,4vw,3.2rem);line-height:1;text-decoration:none;white-space:nowrap}.brand span,.footer-brand span,.campaign-logo span{color:var(--stan-magenta)}.nav{margin-left:auto;display:flex;gap:clamp(.65rem,1.5vw,1.3rem);align-items:center}.nav a{text-decoration:none;font-size:clamp(1.1rem,1.7vw,1.5rem)}.menu-button{display:none;margin-left:auto;border:1px solid rgba(255,255,255,.32);background:transparent;color:var(--pirate-white);font:inherit;padding:.4rem .75rem}
+.wrap{width:min(100%,var(--wrap));margin-inline:auto;padding-inline:var(--pad)}
+.section{width:100%;min-height:80vh;padding-block:var(--section-pad);display:flex;align-items:center}.section-light{background:var(--stan-cream);color:var(--stan-magenta)}.section-magenta{background:var(--stan-magenta);color:var(--stan-cream)}.section-black{background:var(--pirate-black);color:var(--pirate-white)}
+.kicker{font-size:clamp(1.25rem,2vw,1.9rem);color:var(--stan-magenta);margin-bottom:1rem}.section-black .kicker,.light-kicker{color:var(--stan-yellow)}
+h1,h2,h3{margin:0;text-transform:uppercase;line-height:1.06;font-weight:400}h1{font-size:clamp(4.8rem,12vw,11rem);color:var(--pirate-black)}h2{font-size:clamp(3.8rem,8.5vw,8rem)}h3{font-size:clamp(2.2rem,4vw,4rem)}
+.lead,.large-text,.priority-card p,.candidate-info p,.footer p,.social-box,.leader-copy p{font-family:"Bebas Neue Pro","Bebas Neue","Arial Narrow",Arial,sans-serif;letter-spacing:.01em;line-height:1.24}.lead{font-size:clamp(1.55rem,2.6vw,2.25rem);max-width:780px;margin-top:1.3rem;color:inherit}.large-text{font-size:clamp(1.55rem,2.6vw,2.3rem);max-width:580px}
+.hero{padding-block:clamp(38px,6vw,80px)}.hero-center{text-align:center;display:grid;justify-items:center}.campaign-logo{font-size:clamp(5.5rem,16vw,14rem);line-height:1.05}.hero-map{width:min(86vw,980px);height:auto;max-height:50vh;object-fit:contain;margin:.8rem auto .1rem}.button-row{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:2rem}.centered-buttons{justify-content:center}.button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.15rem;text-decoration:none;font-size:1.45rem;line-height:1;border:2px solid transparent}.button-yellow{background:var(--stan-yellow);color:var(--stan-magenta);box-shadow:10px 10px 0 rgba(0,0,0,.18)}.button-black{background:var(--pirate-black);color:var(--pirate-white)}
+.leader-split{padding:0;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:80vh}.leader-panel{position:relative;min-height:80vh;overflow:hidden;display:flex;align-items:center;padding:0}.leader-panel-pirati{background:var(--pirate-black);color:var(--pirate-white)}.leader-panel-stan{background:var(--stan-magenta);color:var(--stan-cream)}.leader-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:grayscale(.15)}.leader-shade{position:absolute;inset:0;z-index:1}.leader-panel-pirati .leader-shade{background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.35) 54%,rgba(0,0,0,.1))}.leader-panel-stan .leader-shade{background:linear-gradient(90deg,rgba(206,15,104,.82),rgba(206,15,104,.45) 56%,rgba(206,15,104,.1))}.leader-copy{position:relative;z-index:2;max-width:720px;margin-inline:clamp(20px,5vw,72px);background:rgba(0,0,0,.72);padding:clamp(1.25rem,4vw,3rem);box-shadow:16px 16px 0 var(--stan-yellow)}.leader-panel-stan .leader-copy{background:var(--pirate-black)}.leader-copy h2{font-size:clamp(3.1rem,6.8vw,7rem);color:var(--pirate-white)}.leader-copy h3{font-size:clamp(2.3rem,5vw,4.7rem);color:var(--stan-yellow);margin-top:.4rem}.leader-copy p:last-child{font-size:clamp(1.3rem,2vw,1.9rem);margin-top:1rem;color:var(--pirate-white)}
+.split-grid,.vote-grid,.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.photo-hero{position:relative;overflow:hidden;padding:0;color:var(--pirate-white);background:var(--pirate-black);min-height:80vh}.section-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1);z-index:0}.photo-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.22) 60%,rgba(0,0,0,.05));z-index:1}.photo-copy-wrap{position:relative;z-index:2}.photo-copy{max-width:720px;background:rgba(0,0,0,.70);padding:clamp(1.4rem,4vw,3rem);box-shadow:18px 18px 0 rgba(255,237,0,.82)}.photo-copy h2{color:var(--pirate-white)}
+.priorities{align-items:flex-start}.priority-list{display:grid;gap:1rem;margin-top:2rem}.priority-card{display:grid;grid-template-columns:78px 1fr;gap:0;align-items:stretch;background:var(--pirate-white);color:var(--ink);border:2px solid rgba(206,15,104,.22);min-height:180px}.priority-number{background:var(--stan-magenta);color:var(--stan-yellow);display:grid;place-items:center;font-size:2.5rem}.priority-copy{padding:1.1rem 1.35rem 1.25rem}.priority-copy h3{color:var(--stan-magenta);margin-bottom:.55rem}.priority-card p{font-size:clamp(1.18rem,1.9vw,1.48rem);max-width:1000px}
+.senat-section{background:var(--stan-magenta);color:var(--stan-cream);padding:0;overflow:hidden;min-height:80vh;align-items:stretch}.senat-layout{width:min(100%,var(--wrap));height:80vh;min-height:80vh;margin-inline:auto;display:flex;align-items:stretch;padding-inline:var(--pad)}.senat-photo{height:100%;aspect-ratio:1/1;flex:0 0 auto;background:#b9b9b9;overflow:hidden}.senat-photo img{width:100%;height:100%;object-fit:cover}.senat-copy{align-self:center;position:relative;z-index:2;margin-left:-22vh;max-width:660px;background:var(--pirate-black);color:var(--pirate-white);padding:clamp(1.4rem,4vw,3rem);box-shadow:18px 18px 0 var(--stan-yellow)}.senat-copy .kicker{color:var(--stan-yellow)}.senat-copy h2{color:var(--pirate-white)}
+.kandidatka{align-items:flex-start}.candidate-full-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:2rem}.candidate-card{position:relative;display:grid;grid-template-columns:170px 1fr;align-items:center;min-height:170px}.candidate-photo{width:170px;height:170px;object-fit:cover;background:#b9b9b9;z-index:1}.candidate-info{min-height:124px;margin-left:-28px;background:var(--stan-cream);color:var(--pirate-black);padding:1rem 1rem 1rem 2.4rem;box-shadow:10px 10px 0 var(--stan-magenta);display:grid;align-content:center}.candidate-info h3{color:var(--stan-magenta);font-size:clamp(1.9rem,3.2vw,3.2rem);line-height:1.03}.candidate-info p{font-size:1.2rem;color:var(--pirate-black);margin-top:.15rem}.candidate-socials{display:flex;gap:.45rem;margin-top:.55rem}.candidate-socials a{width:34px;height:34px;border-radius:50%;background:var(--stan-yellow);display:grid;place-items:center}.candidate-socials img{width:21px;height:21px}
+.vote h2{color:var(--pirate-black)}.vote .lead{color:var(--pirate-black)}.social-box{justify-self:end;width:min(100%,460px);background:var(--stan-yellow);color:var(--stan-magenta);padding:2rem;font-size:clamp(1.45rem,2.4vw,2rem);box-shadow:14px 14px 0 rgba(0,0,0,.15)}.social-box h3{margin-bottom:1.2rem}.social-group{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;border-top:2px solid rgba(206,15,104,.35);padding-top:1rem;margin-top:1rem}.social-links{display:flex;gap:.7rem}.social-links a{width:52px;height:52px;display:grid;place-items:center;color:var(--pirate-black);background:var(--stan-cream);border-radius:50%;text-decoration:none}.social-links img{width:31px;height:31px}
+.footer{min-height:50vh;padding-block:3rem;display:flex;align-items:center}.footer-grid{align-items:start}.footer a{color:var(--stan-yellow)}.footer-brand{font-size:2.2rem}.footer p{font-size:1.25rem}
+@media(max-width:980px){.candidate-full-grid{grid-template-columns:1fr}.candidate-card{grid-template-columns:150px 1fr;min-height:150px}.candidate-photo{width:150px;height:150px}}
+@media(max-width:840px){.topbar{min-height:64px;align-items:flex-start;flex-wrap:wrap}.menu-button{display:inline-flex}.nav{flex-basis:100%;display:none;margin-left:0;padding-top:.5rem;flex-wrap:wrap}.nav.is-open{display:flex}.vote-grid,.footer-grid{grid-template-columns:1fr}.section{min-height:80vh;padding-block:clamp(56px,12vw,96px)}.hero-map{width:88vw;max-height:46vh}.leader-split{grid-template-columns:1fr;padding:0}.leader-panel{min-height:80vh}.photo-hero,.senat-section{padding:0}.priority-card{grid-template-columns:60px 1fr}.priority-number{font-size:1.85rem}.priority-copy{padding:.85rem 1rem}.priority-copy h3{font-size:clamp(1.9rem,8vw,2.8rem)}.priority-card p{font-size:1.08rem;line-height:1.2}.senat-layout{display:grid;grid-template-columns:1fr;gap:0;padding-inline:0;height:auto;min-height:80vh;align-content:start}.senat-photo{width:100vw;height:100vw;max-width:none}.senat-copy{margin:-18vw var(--pad) 3rem;max-width:none}.social-box{justify-self:stretch}}
+@media(max-width:560px){:root{--pad:18px}.brand{font-size:2.1rem}.campaign-logo{font-size:clamp(4.2rem,18vw,6.2rem)}h1{font-size:clamp(4rem,18vw,5.7rem)}h2{font-size:clamp(3.2rem,15vw,4.9rem)}.priority-card{grid-template-columns:1fr}.priority-number{width:72px;height:54px}.priority-copy{padding:.9rem 1rem 1rem}.candidate-card{grid-template-columns:116px 1fr;min-height:116px}.candidate-photo{width:116px;height:116px}.candidate-info{min-height:96px;margin-left:-16px;padding:.7rem .7rem .7rem 1.6rem;box-shadow:7px 7px 0 var(--stan-magenta)}.candidate-info h3{font-size:1.65rem}.candidate-info p{font-size:1rem}.candidate-socials a{width:30px;height:30px}.social-group{grid-template-columns:1fr}.social-links a{width:48px;height:48px}}
+
+
+/* v5 requested corrections */
+/* 1) Restore the first section to the v1/v2 two-column layout; no centered poster layout. */
+.hero {
+  min-height: 80vh !important;
+  padding-block: var(--section-pad) !important;
+}
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, .85fr) minmax(360px, 1.15fr) !important;
+  gap: clamp(2rem, 5vw, 5rem) !important;
+  align-items: center !important;
+}
+.hero-copy {
+  position: relative !important;
+  z-index: 2 !important;
+  text-align: left !important;
+  justify-items: start !important;
+}
+.logo-stage {
+  display: grid !important;
+  justify-items: start !important;
+  align-content: center !important;
+  text-align: left !important;
+  min-width: 0 !important;
+}
+.campaign-logo {
+  color: var(--pirate-black) !important;
+  font-size: clamp(4.8rem, 10vw, 10.5rem) !important;
+  line-height: 1.08 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+.campaign-logo span {
+  color: var(--stan-magenta) !important;
+}
+.hero-map {
+  width: min(58vw, 760px) !important;
+  height: auto !important;
+  max-height: 52vh !important;
+  object-fit: contain !important;
+  margin: .45rem 0 0 !important;
+}
+
+/* 2) Leader split: solid colour panels, full-height photos, text boxes to the right on desktop and below on mobile. */
+.leader-split {
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: stretch !important;
+  min-height: 80vh !important;
+}
+.leader-panel {
+  position: relative !important;
+  min-height: 80vh !important;
+  height: 80vh !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  display: block !important;
+}
+.leader-panel-pirati {
+  background: var(--pirate-black) !important;
+  color: var(--pirate-white) !important;
+}
+.leader-panel-stan {
+  background: var(--stan-magenta) !important;
+  color: var(--stan-cream) !important;
+}
+.leader-layout {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 80vh !important;
+}
+.leader-photo-frame {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: 54% !important;
+  overflow: hidden !important;
+  background: #b9b9b9 !important;
+  z-index: 1 !important;
+}
+.leader-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  filter: grayscale(.08) !important;
+}
+.leader-shade,
+.photo-overlay,
+.photo-copy-wrap,
+.photo-copy {
+  display: none !important;
+}
+.leader-copy {
+  position: absolute !important;
+  z-index: 2 !important;
+  right: clamp(18px, 4vw, 56px) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: min(48%, 440px) !important;
+  max-width: none !important;
+  margin: 0 !important;
+  background: var(--pirate-black) !important;
+  color: var(--pirate-white) !important;
+  padding: clamp(1.15rem, 3vw, 2.4rem) !important;
+  box-shadow: 14px 14px 0 var(--stan-yellow) !important;
+}
+.leader-panel-pirati .leader-copy {
+  background: var(--stan-cream) !important;
+  color: var(--pirate-black) !important;
+}
+.leader-panel-pirati .leader-copy h2,
+.leader-panel-pirati .leader-copy p:last-child {
+  color: var(--pirate-black) !important;
+}
+.leader-copy h2 {
+  font-size: clamp(2.7rem, 5.3vw, 5.6rem) !important;
+  line-height: 1.06 !important;
+  color: var(--pirate-white) !important;
+}
+.leader-copy h3 {
+  color: var(--stan-magenta) !important;
+  line-height: 1.06 !important;
+}
+.leader-panel-stan .leader-copy h3,
+.leader-panel-stan .leader-copy .kicker {
+  color: var(--stan-yellow) !important;
+}
+.leader-panel-stan .leader-copy p:last-child {
+  color: var(--pirate-white) !important;
+}
+
+/* 3) Radnice section: only the image, edge-to-edge; no text box, no gradient. */
+.photo-hero {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  min-height: 80vh !important;
+  height: 80vh !important;
+  background: var(--pirate-black) !important;
+}
+.section-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  filter: none !important;
+  z-index: 0 !important;
+}
+
+/* 4) Padevět: photo exactly from edge to edge vertically. */
+.senat-section {
+  padding: 0 !important;
+  min-height: 80vh !important;
+  height: 80vh !important;
+  overflow: hidden !important;
+  align-items: stretch !important;
+}
+.senat-layout {
+  width: 100vw !important;
+  max-width: none !important;
+  height: 80vh !important;
+  min-height: 80vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+.senat-photo {
+  height: 80vh !important;
+  width: 80vh !important;
+  aspect-ratio: 1 / 1 !important;
+  flex: 0 0 80vh !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #b9b9b9 !important;
+}
+.senat-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.senat-copy {
+  align-self: center !important;
+  position: relative !important;
+  z-index: 2 !important;
+  margin-left: -12vh !important;
+  max-width: 680px !important;
+  background: var(--pirate-black) !important;
+  color: var(--pirate-white) !important;
+  padding: clamp(1.4rem, 4vw, 3rem) !important;
+  box-shadow: 18px 18px 0 var(--stan-yellow) !important;
+}
+
+/* 5) Candidate cards: miniature version of the same photo + right-side text-box logic. */
+.candidate-full-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.4rem !important;
+  margin-top: 2rem !important;
+}
+.candidate-card {
+  position: relative !important;
+  display: flex !important;
+  align-items: stretch !important;
+  height: clamp(170px, 18vw, 240px) !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+.candidate-photo {
+  height: 100% !important;
+  width: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  flex: 0 0 auto !important;
+  z-index: 1 !important;
+}
+.candidate-info {
+  align-self: center !important;
+  min-height: 64% !important;
+  margin-left: -30px !important;
+  padding: 1rem 1rem 1rem 2.25rem !important;
+  background: var(--stan-cream) !important;
+  color: var(--pirate-black) !important;
+  box-shadow: 10px 10px 0 var(--stan-magenta) !important;
+  display: grid !important;
+  align-content: center !important;
+  flex: 1 1 auto !important;
+  z-index: 2 !important;
+}
+.candidate-info h3 {
+  color: var(--stan-magenta) !important;
+  line-height: 1.06 !important;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .logo-stage {
+    justify-items: start !important;
+  }
+  .hero-map {
+    width: min(92vw, 760px) !important;
+    max-height: 48vh !important;
+  }
+  .leader-split {
+    grid-template-columns: 1fr !important;
+  }
+  .leader-panel {
+    height: 80vh !important;
+    min-height: 80vh !important;
+    overflow: hidden !important;
+  }
+  .leader-photo-frame {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 66% !important;
+    bottom: auto !important;
+  }
+  .leader-copy {
+    position: absolute !important;
+    left: var(--pad) !important;
+    right: var(--pad) !important;
+    bottom: clamp(22px, 5vh, 44px) !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+  .senat-layout {
+    display: block !important;
+    height: 80vh !important;
+    min-height: 80vh !important;
+    position: relative !important;
+  }
+  .senat-photo {
+    width: 100vw !important;
+    height: 66% !important;
+    aspect-ratio: auto !important;
+    flex: none !important;
+  }
+  .senat-copy {
+    position: absolute !important;
+    left: var(--pad) !important;
+    right: var(--pad) !important;
+    bottom: clamp(22px, 5vh, 44px) !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+  .candidate-full-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 560px) {
+  .campaign-logo {
+    font-size: clamp(3.8rem, 16vw, 5.6rem) !important;
+  }
+  .candidate-card {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+  .candidate-photo {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+  .candidate-info {
+    margin: -18px 16px 16px !important;
+    padding: 1rem !important;
+    min-height: 0 !important;
+  }
+}
+
+
+/* v6 corrections */
+/* 1) First section: full-section image, top-left headline, bottom-right campaign mark. */
+.hero-cover {
+  position: relative !important;
+  min-height: 80vh !important;
+  height: 80vh !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: var(--pirate-black) !important;
+  color: var(--pirate-white) !important;
+  display: block !important;
+}
+.hero-cover-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: none !important;
+  z-index: 0 !important;
+}
+.hero-cover-layout {
+  position: relative !important;
+  z-index: 2 !important;
+  height: 100% !important;
+  min-height: 80vh !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: stretch !important;
+  pointer-events: none !important;
+}
+.hero-cover-copy {
+  grid-column: 1 !important;
+  align-self: start !important;
+  justify-self: start !important;
+  margin-top: clamp(40px, 7vh, 84px) !important;
+  max-width: 620px !important;
+  text-align: left !important;
+}
+.hero-cover-copy .kicker {
+  color: var(--stan-magenta) !important;
+  margin-bottom: .75rem !important;
+  text-shadow: 0 2px 18px rgba(255,255,255,.55) !important;
+}
+.hero-cover-copy h1 {
+  color: var(--pirate-black) !important;
+  font-size: clamp(4.4rem, 9vw, 9.5rem) !important;
+  line-height: 1.02 !important;
+  text-shadow: 0 2px 18px rgba(255,255,255,.55) !important;
+}
+.hero-cover-logo {
+  grid-column: 2 !important;
+  align-self: end !important;
+  justify-self: end !important;
+  margin: 0 0 clamp(36px, 7vh, 80px) !important;
+  color: var(--pirate-black) !important;
+  font-size: clamp(4.8rem, 8.6vw, 9.5rem) !important;
+  line-height: 1.05 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+  text-shadow: 0 2px 18px rgba(255,255,255,.55) !important;
+}
+
+/* Safer line-height for Czech diacritics in all large headings. */
+h1, h2, h3, .campaign-logo {
+  line-height: 1.04 !important;
+}
+
+/* 2) Leader section: swap Pirate panel colours. The open field is cream, Melena's copy box is black. */
+.leader-panel-pirati {
+  background: var(--stan-cream) !important;
+  color: var(--pirate-black) !important;
+}
+.leader-panel-pirati .leader-copy {
+  background: var(--pirate-black) !important;
+  color: var(--pirate-white) !important;
+}
+.leader-panel-pirati .leader-copy h2,
+.leader-panel-pirati .leader-copy p:last-child {
+  color: var(--pirate-white) !important;
+}
+.leader-panel-pirati .leader-copy h3,
+.leader-panel-pirati .leader-copy .kicker {
+  color: var(--stan-yellow) !important;
+}
+.leader-shade,
+.photo-overlay,
+.photo-copy-wrap,
+.photo-copy {
+  display: none !important;
+}
+
+/* 3) Radnice: still only the image across the whole section. */
+.photo-hero {
+  padding: 0 !important;
+  min-height: 80vh !important;
+  height: 80vh !important;
+  overflow: hidden !important;
+}
+.photo-hero .section-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* 4) Restore Padevět section to the previous full-height square-photo logic. */
+.senat-section {
+  background: var(--stan-magenta) !important;
+  color: var(--stan-cream) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  min-height: 80vh !important;
+  height: 80vh !important;
+  align-items: stretch !important;
+}
+.senat-layout {
+  width: 100vw !important;
+  max-width: none !important;
+  height: 80vh !important;
+  min-height: 80vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+.senat-photo {
+  height: 80vh !important;
+  width: 80vh !important;
+  aspect-ratio: 1 / 1 !important;
+  flex: 0 0 80vh !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #b9b9b9 !important;
+}
+.senat-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.senat-copy {
+  align-self: center !important;
+  position: relative !important;
+  z-index: 2 !important;
+  margin-left: -12vh !important;
+  max-width: 680px !important;
+  background: var(--pirate-black) !important;
+  color: var(--pirate-white) !important;
+  padding: clamp(1.4rem, 4vw, 3rem) !important;
+  box-shadow: 18px 18px 0 var(--stan-yellow) !important;
+}
+.senat-copy .kicker,
+.senat-copy h2 {
+  color: var(--stan-yellow) !important;
+}
+.senat-copy .lead {
+  color: var(--pirate-white) !important;
+}
+
+@media (max-width: 900px) {
+  .hero-cover {
+    height: 80vh !important;
+    min-height: 80vh !important;
+  }
+  .hero-cover-layout {
+    grid-template-columns: 1fr !important;
+    min-height: 80vh !important;
+  }
+  .hero-cover-copy {
+    grid-column: 1 !important;
+    margin-top: clamp(34px, 6vh, 70px) !important;
+    max-width: min(100%, 640px) !important;
+  }
+  .hero-cover-copy h1 {
+    font-size: clamp(4.1rem, 15vw, 7rem) !important;
+  }
+  .hero-cover-logo {
+    grid-column: 1 !important;
+    justify-self: end !important;
+    align-self: end !important;
+    margin-bottom: clamp(34px, 6vh, 64px) !important;
+    font-size: clamp(3.5rem, 13vw, 5.8rem) !important;
+  }
+  .senat-layout {
+    display: block !important;
+    height: 80vh !important;
+    min-height: 80vh !important;
+    position: relative !important;
+  }
+  .senat-photo {
+    width: 100vw !important;
+    height: 66% !important;
+    aspect-ratio: auto !important;
+    flex: none !important;
+  }
+  .senat-copy {
+    position: absolute !important;
+    left: var(--pad) !important;
+    right: var(--pad) !important;
+    bottom: clamp(22px, 5vh, 44px) !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+}
+
+
+/* v7: first section only — no two-column hero layout. */
+.hero-cover-layout {
+  position: relative !important;
+  z-index: 2 !important;
+  height: 100% !important;
+  min-height: 80vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  pointer-events: none !important;
+}
+.hero-cover-copy {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: clamp(40px, 7vh, 84px) !important;
+  text-align: left !important;
+}
+.hero-cover-copy h1 {
+  max-width: 100% !important;
+  font-size: clamp(4.4rem, 9vw, 9.5rem) !important;
+  line-height: 1.04 !important;
+  white-space: normal !important;
+}
+.hero-cover-logo {
+  align-self: flex-end !important;
+  margin: clamp(14px, 2.5vh, 30px) 0 0 !important;
+  text-align: right !important;
+  font-size: clamp(4.3rem, 8.2vw, 9rem) !important;
+  line-height: 1.04 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 900px) {
+  .hero-cover-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 80vh !important;
+  }
+  .hero-cover-copy {
+    margin-top: clamp(34px, 6vh, 70px) !important;
+    max-width: none !important;
+  }
+  .hero-cover-copy h1 {
+    font-size: clamp(4.1rem, 15vw, 7rem) !important;
+    line-height: 1.04 !important;
+  }
+  .hero-cover-logo {
+    align-self: flex-end !important;
+    margin-top: clamp(12px, 2.2vh, 24px) !important;
+    margin-bottom: 0 !important;
+    font-size: clamp(3.3rem, 12vw, 5.8rem) !important;
+  }
+}
+
+
+/* v8: only requested corrections — first section vertical placement + Padevět section restored/locked. */
+:root {
+  --hero-edge-space: clamp(40px, 7vh, 84px);
+}
+
+/* First section: no two columns. Top slogan left at the normal content width; campaign mark right and bottom. */
+.hero-cover {
+  position: relative !important;
+  min-height: 80vh !important;
+  height: 80vh !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.hero-cover-layout {
+  position: relative !important;
+  z-index: 2 !important;
+  height: 100% !important;
+  min-height: 80vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: space-between !important;
+  padding-top: var(--hero-edge-space) !important;
+  padding-bottom: var(--hero-edge-space) !important;
+  pointer-events: none !important;
+}
+
+.hero-cover-copy {
+  position: static !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  align-self: stretch !important;
+}
+
+.hero-cover-copy h1 {
+  max-width: 100% !important;
+  margin: 0 !important;
+  white-space: normal !important;
+  text-align: left !important;
+  line-height: 1.05 !important;
+}
+
+.hero-cover-logo {
+  position: static !important;
+  align-self: flex-end !important;
+  justify-self: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+  line-height: 1.05 !important;
+}
+
+/* Padevět section: full-height square photo from edge to edge, copy half-overlapping to the right on desktop. */
+.senat-section {
+  background: var(--stan-magenta) !important;
+  color: var(--stan-cream) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  min-height: 80vh !important;
+  height: 80vh !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.senat-layout {
+  width: 100vw !important;
+  max-width: none !important;
+  height: 80vh !important;
+  min-height: 80vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.senat-photo {
+  height: 80vh !important;
+  width: 80vh !important;
+  flex: 0 0 80vh !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #b9b9b9 !important;
+}
+
+.senat-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.senat-copy {
+  align-self: center !important;
+  position: relative !important;
+  z-index: 2 !important;
+  margin-left: -12vh !important;
+  max-width: 680px !important;
+  background: var(--pirate-black) !important;
+  color: var(--pirate-white) !important;
+  padding: clamp(1.4rem, 4vw, 3rem) !important;
+  box-shadow: 18px 18px 0 var(--stan-yellow) !important;
+}
+
+.senat-copy .kicker,
+.senat-copy h2 {
+  color: var(--stan-yellow) !important;
+}
+
+.senat-copy .lead {
+  color: var(--pirate-white) !important;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --hero-edge-space: clamp(34px, 6vh, 70px);
+  }
+
+  .hero-cover-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-height: 80vh !important;
+    padding-top: var(--hero-edge-space) !important;
+    padding-bottom: var(--hero-edge-space) !important;
+  }
+
+  .hero-cover-copy {
+    margin: 0 !important;
+    max-width: none !important;
+  }
+
+  .hero-cover-copy h1 {
+    font-size: clamp(4.1rem, 15vw, 7rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  .hero-cover-logo {
+    align-self: flex-end !important;
+    margin: 0 !important;
+    font-size: clamp(3.3rem, 12vw, 5.8rem) !important;
+  }
+
+  .senat-layout {
+    display: block !important;
+    height: 80vh !important;
+    min-height: 80vh !important;
+    position: relative !important;
+  }
+
+  .senat-photo {
+    width: 100vw !important;
+    height: 66% !important;
+    aspect-ratio: auto !important;
+    flex: none !important;
+  }
+
+  .senat-copy {
+    position: absolute !important;
+    left: var(--pad) !important;
+    right: var(--pad) !important;
+    bottom: clamp(22px, 5vh, 44px) !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+}
+
+
+/* v10 requested changes: hero colours + swap sections 2 and 3 */
+.hero-cover-copy .kicker {
+  color: var(--stan-yellow) !important;
+  text-shadow: none !important;
+}
+.hero-cover-copy h1 {
+  color: var(--pirate-white) !important;
+  text-shadow: none !important;
+}
+.hero-cover-logo {
+  color: var(--pirate-white) !important;
+  text-shadow: none !important;
+}
+.hero-cover-logo span {
+  color: var(--stan-magenta) !important;
+}
+
+.campaign-split {
+  padding: 0 !important;
+  min-height: 80vh !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: stretch !important;
+}
+.campaign-panel {
+  min-height: 80vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: clamp(24px, 5vw, 56px) !important;
+}
+.campaign-panel-pirati {
+  background: var(--pirate-black) !important;
+  color: var(--pirate-white) !important;
+}
+.campaign-panel-stan {
+  background: var(--stan-cream) !important;
+  color: var(--stan-magenta) !important;
+}
+.campaign-panel-inner {
+  width: min(100%, 520px) !important;
+  display: grid !important;
+  justify-items: center !important;
+  gap: clamp(1.25rem, 2vw, 1.8rem) !important;
+  text-align: center !important;
+}
+.campaign-panel-logo {
+  width: min(100%, 420px) !important;
+  height: auto !important;
+  max-height: 46vh !important;
+  object-fit: contain !important;
+}
+.campaign-panel-inner-stan h2 {
+  color: var(--stan-magenta) !important;
+  font-size: clamp(3.8rem, 7vw, 7rem) !important;
+  line-height: 1.05 !important;
+  max-width: 10ch !important;
+}
+.campaign-slogan-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 60px !important;
+  padding: .9rem 1.35rem !important;
+  font-size: clamp(1.9rem, 3vw, 2.6rem) !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+.campaign-slogan-box-pirati {
+  background: var(--stan-yellow) !important;
+  color: var(--pirate-black) !important;
+}
+.campaign-slogan-box-stan {
+  background: var(--stan-yellow) !important;
+  color: var(--stan-magenta) !important;
+}
+
+@media (max-width: 900px) {
+  .campaign-split {
+    grid-template-columns: 1fr !important;
+  }
+  .campaign-panel {
+    min-height: 40vh !important;
+  }
+  .campaign-panel-inner {
+    width: min(100%, 640px) !important;
+  }
+  .campaign-panel-logo {
+    width: min(100%, 360px) !important;
+    max-height: 30vh !important;
+  }
+  .campaign-panel-inner-stan h2 {
+    font-size: clamp(3.3rem, 12vw, 5.6rem) !important;
+  }
+}
+
+
+/* v11 requested updates */
+.campaign-panel,
+.campaign-panel-pirati,
+.campaign-panel-stan {
+  background: var(--pirate-white) !important;
+  color: var(--pirate-black) !important;
+}
+.campaign-panel {
+  padding: clamp(16px, 3vw, 32px) !important;
+}
+.campaign-panel-inner {
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.campaign-panel-logo {
+  display: block !important;
+  width: auto !important;
+  height: 80% !important;
+  max-height: 80% !important;
+  max-width: 80% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+}
+.leader-panel-pirati,
+.leader-panel-stan {
+  background: var(--stan-cream) !important;
+}
+.priority-number {
+  background: var(--pirate-black) !important;
+  color: var(--stan-yellow) !important;
+}
+@media (max-width: 900px) {
+  .campaign-panel-logo {
+    height: 80% !important;
+    max-height: 80% !important;
+    max-width: min(80%, 320px) !important;
+  }
+}
+
+
+/* v12: section 2 strict image-only beige panels */
+#radnice.campaign-split {
+  background: var(--stan-cream) !important;
+}
+#radnice .campaign-panel,
+#radnice .campaign-panel-pirati,
+#radnice .campaign-panel-stan {
+  background: var(--stan-cream) !important;
+  color: inherit !important;
+  padding: 0 !important;
+  min-height: 80vh !important;
+}
+#radnice .campaign-panel-inner {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 80vh !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+}
+#radnice .campaign-panel-logo {
+  display: block !important;
+  height: 80% !important;
+  width: auto !important;
+  max-height: 80% !important;
+  max-width: none !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: contain !important;
+}
+#radnice .campaign-panel-inner > :not(img) {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  #radnice .campaign-panel,
+  #radnice .campaign-panel-pirati,
+  #radnice .campaign-panel-stan,
+  #radnice .campaign-panel-inner {
+    min-height: 40vh !important;
+  }
+  #radnice .campaign-panel-logo {
+    height: 80% !important;
+    width: auto !important;
+    max-height: 80% !important;
+    max-width: 80% !important;
+  }
+}
 
